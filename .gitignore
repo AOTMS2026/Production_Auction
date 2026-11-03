@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+*/node_modules/
+frontend/node_modules/
+Backend/node_modules/
+
+# Environment variables & secrets (CRITICAL: Never commit .env files)
+.env
+.env.*
+!.env.example
+*.env
+Backend/.env
+Backend/.env.*
+frontend/.env
+frontend/.env.*
+frontend/.env.local
+
+# Next.js & Build outputs
+frontend/.next/
+frontend/out/
+dist/
+build/
+coverage/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# System files
+.DS_Store
+Thumbs.db
+*.pem
+*.tsbuildinfo
+next-env.d.ts
+
