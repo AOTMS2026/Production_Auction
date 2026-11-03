@@ -1,0 +1,294 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* User Defined Color Theme */
+  --color-smart_blue: #0466c8;
+  --color-smart_blue-100: #011428;
+  --color-smart_blue-200: #022950;
+  --color-smart_blue-300: #023d78;
+  --color-smart_blue-400: #0352a0;
+  --color-smart_blue-500: #0466c8;
+  --color-smart_blue-600: #0f85fa;
+  --color-smart_blue-700: #4ba3fb;
+  --color-smart_blue-800: #87c2fd;
+  --color-smart_blue-900: #c3e0fe;
+
+  --color-sapphire: #0353a4;
+  --color-sapphire-100: #011121;
+  --color-sapphire-200: #012242;
+  --color-sapphire-300: #023263;
+  --color-sapphire-400: #034384;
+  --color-sapphire-500: #0353a4;
+  --color-sapphire-600: #0576e8;
+  --color-sapphire-700: #3698fb;
+  --color-sapphire-800: #79bbfc;
+  --color-sapphire-900: #bcddfe;
+
+  --color-regal_navy: #023e7d;
+  --color-regal_navy-100: #000c19;
+  --color-regal_navy-200: #011932;
+  --color-regal_navy-300: #01254b;
+  --color-regal_navy-400: #023164;
+  --color-regal_navy-500: #023e7d;
+  --color-regal_navy-600: #0363c9;
+  --color-regal_navy-700: #1d89fc;
+  --color-regal_navy-800: #68b0fd;
+  --color-regal_navy-900: #b4d8fe;
+
+  --color-prussian_blue: #002855;
+  --color-prussian_blue-100: #000811;
+  --color-prussian_blue-200: #001023;
+  --color-prussian_blue-300: #001834;
+  --color-prussian_blue-400: #002045;
+  --color-prussian_blue-500: #002855;
+  --color-prussian_blue-600: #0050ab;
+  --color-prussian_blue-700: #0178ff;
+  --color-prussian_blue-800: #56a5ff;
+  --color-prussian_blue-900: #aad2ff;
+
+  --color-prussian_blue_deep: #001845;
+  --color-prussian_blue_deep-100: #00050e;
+  --color-prussian_blue_deep-200: #000a1d;
+  --color-prussian_blue_deep-300: #000f2b;
+  --color-prussian_blue_deep-400: #001439;
+  --color-prussian_blue_deep-500: #001845;
+  --color-prussian_blue_deep-600: #00389f;
+  --color-prussian_blue_deep-700: #0056f7;
+  --color-prussian_blue_deep-800: #508dff;
+  --color-prussian_blue_deep-900: #a7c6ff;
+
+  --color-prussian_blue_dark: #001233;
+  --color-prussian_blue_dark-100: #00040a;
+  --color-prussian_blue_dark-200: #000714;
+  --color-prussian_blue_dark-300: #000b1f;
+  --color-prussian_blue_dark-400: #000e29;
+  --color-prussian_blue_dark-500: #001233;
+  --color-prussian_blue_dark-600: #00328f;
+  --color-prussian_blue_dark-700: #0052eb;
+  --color-prussian_blue_dark-800: #4788ff;
+  --color-prussian_blue_dark-900: #a3c3ff;
+
+  --color-twilight_indigo: #33415c;
+  --color-twilight_indigo-100: #0a0d12;
+  --color-twilight_indigo-200: #141a25;
+  --color-twilight_indigo-300: #1e2737;
+  --color-twilight_indigo-400: #29344a;
+  --color-twilight_indigo-500: #33415c;
+  --color-twilight_indigo-600: #4d628b;
+  --color-twilight_indigo-700: #7186b1;
+  --color-twilight_indigo-800: #a0aecb;
+  --color-twilight_indigo-900: #d0d7e5;
+
+  --color-blue_slate: #5c677d;
+  --color-blue_slate-100: #131519;
+  --color-blue_slate-200: #252a32;
+  --color-blue_slate-300: #383f4c;
+  --color-blue_slate-400: #4b5365;
+  --color-blue_slate-500: #5c677d;
+  --color-blue_slate-600: #79859c;
+  --color-blue_slate-700: #9ba3b5;
+  --color-blue_slate-800: #bcc2ce;
+  --color-blue_slate-900: #dee0e6;
+
+  --color-slate_grey: #7d8597;
+  --color-slate_grey-100: #191a1f;
+  --color-slate_grey-200: #31353d;
+  --color-slate_grey-300: #4a4f5c;
+  --color-slate_grey-400: #62697a;
+  --color-slate_grey-500: #7d8597;
+  --color-slate_grey-600: #979dab;
+  --color-slate_grey-700: #b1b6c0;
+  --color-slate_grey-800: #cbced5;
+  --color-slate_grey-900: #e5e7ea;
+
+  --color-lavender_grey: #979dac;
+  --color-lavender_grey-100: #1d1f24;
+  --color-lavender_grey-200: #393d47;
+  --color-lavender_grey-300: #565c6b;
+  --color-lavender_grey-400: #737a8e;
+  --color-lavender_grey-500: #979dac;
+  --color-lavender_grey-600: #abb0bc;
+  --color-lavender_grey-700: #c0c4cd;
+  --color-lavender_grey-800: #d5d7dd;
+  --color-lavender_grey-900: #eaebee;
+}
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 14s linear infinite;
+}
+
+@keyframes nameScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-name-scroll {
+  display: inline-flex;
+  animation: nameScroll 12s linear infinite;
+  will-change: transform;
+}
+
+.animate-name-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* Sleek custom scrollbar for modal forms and containers */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 210, 238, 0.4) rgba(2, 19, 27, 0.6);
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(2, 19, 27, 0.6);
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 210, 238, 0.35);
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 210, 238, 0.75);
+}
